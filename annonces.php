@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+    <header>
+        <h1>Liste des annonces</h1>
+    </header>
     <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,54 +34,54 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
-    
-    <?php
-    try    
-    {
-        $bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'admin');;
-    }
-    catch (Exception $e)
-    {
-    
-            die('Erreur : ' . $e->getMessage());
-    
-    }
-    $annonce = $bdd->query('
-    select id_ads, firstname, title, description,price 
-    from ads, users
-    where ads.id_user = users.id_users;
-    ');
-    ?>
-    <span>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id de l'annonce</th>
-            <th>titre</th>
-            <th>Prix</th>
-            <th>Description</th>
-            <th>Vendeur</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    while ($donnees = $annonce->fetch())
-{
-    ?>
-    <tr>
-    <td><?=  $donnees['id_ads'] ?></td>
-        <td><?=  $donnees['title'] ?></td>
-        <td><?=  $donnees['price'] ?>€</td>
-        <td><?=  $donnees['description'] ?></td>
-        <td class="text-uppercase"><?=  $donnees['firstname'] ?></td>
-    </tr>
-    <?php
-}
-?>
-    </tbody>
-</table>
-    </span>
-
+    <section>
+        <?php
+        try    
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'admin');;
+        }
+        catch (Exception $e)
+        {
+        
+                die('Erreur : ' . $e->getMessage());
+        
+        }
+        $annonce = $bdd->query('
+        select id_ads, firstname, title, description,price 
+        from ads, users
+        where ads.id_user = users.id_users;
+        ');
+        ?>
+        <span>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id de l'annonce</th>
+                        <th>titre</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                        <th>Vendeur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                while ($donnees = $annonce->fetch())
+            {
+                ?>
+                <tr>
+                <td><?=  $donnees['id_ads'] ?></td>
+                    <td><?=  $donnees['title'] ?></td>
+                    <td><?=  $donnees['price'] ?>€</td>
+                    <td><?=  $donnees['description'] ?></td>
+                    <td class="text-uppercase"><?=  $donnees['firstname'] ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+                </tbody>
+            </table>
+        </span>
+    </section>
     <footer>Merci de ne pas regarder mon code.</footer>
 </body>
 </html>

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+    <header>
+        <h1>Bienvenue sur la page d'accueil de votre site d'annonces</h1>
+    </header>
     <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,6 +34,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
-
+    <section>
+    </section>
 </body>
 </html>

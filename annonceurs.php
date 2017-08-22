@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+    <header>
+        <h1>Les annonceurs</h1>
+    </header>
     <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,48 +35,48 @@
     </div><!-- /.container-fluid -->
     </nav>
 
-
-    <?php
-    try    
-    {
-        $bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'admin');;
-    }
-    catch (Exception $e)
-    {
-    
-            die('Erreur : ' . $e->getMessage());
-    
-    }
-    $annonce = $bdd->query('
-    select * from  users;
-    ');
-    ?>
-    <span>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Réference de l'utilisateur</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    while ($donnees = $annonce->fetch())
-{
-    ?>
-    <tr>
-    <td><?=  $donnees['id_users'] ?></td>
-        <td class="text-uppercase"><?=  $donnees['lastname'] ?></td>
-        <td class="text-capitalize"><?=  $donnees['firstname'] ?></td>
-    </tr>
-    <?php
-}
-?>
-    </tbody>
-</table>
-    </span>
-
+    <section>
+        <?php
+        try    
+        {
+            $bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'admin');;
+        }
+        catch (Exception $e)
+        {
+        
+                die('Erreur : ' . $e->getMessage());
+        
+        }
+        $annonce = $bdd->query('
+        select * from  users;
+        ');
+        ?>
+        <span>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Réference de l'utilisateur</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                while ($donnees = $annonce->fetch())
+            {
+                ?>
+                <tr>
+                <td><?=  $donnees['id_users'] ?></td>
+                    <td class="text-uppercase"><?=  $donnees['lastname'] ?></td>
+                    <td class="text-capitalize"><?=  $donnees['firstname'] ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+                </tbody>
+            </table>
+        </span>
+    </section>
     <footer>Merci de ne pas regarder mon code.</footer>
 </body>
 </html>
