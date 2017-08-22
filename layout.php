@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur la page d'accueil de votre site d'annonces</h1>
+    <h1><?= $header ?></h1>
     </header>
     <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -27,14 +27,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href="annonceurs.php">Annonceurs </a></li>
-            <li><a href="rubriques.php">Rubriques</a></li>
-            <li><a href="annonces.php">Annonces</a></li>
+            <?= $nav ?>
         </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
     <section>
+    <?= $section ?>
     </section>
 </body>
 </html>
