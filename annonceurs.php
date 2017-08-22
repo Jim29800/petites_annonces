@@ -41,11 +41,11 @@ $section ="
             <td class='text-uppercase'>" . $donnees['lastname'] . "</td>
             <td class='text-capitalize'>" . $donnees['firstname'] . "</td>
         </tr>";
-    };
+    };  
     $section .="
         </tbody>
     </table>
 </span>";
 include("layout.php");
 
-        ?>
+?>

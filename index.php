@@ -35,6 +35,29 @@
     </div><!-- /.container-fluid -->
     </nav>
     <section>
+
+    <form action="ajout.php" method="post">
+        <ul>
+            <li>
+                <label for="titre">Votre titre</label>
+                <input type="text" name="titre" id="titre"  />
+            </li><li>
+                <label for="prix">Votre prix</label>
+                <input type="number" name="prix" id="prix" />
+            </li><li>
+                <label for="description">Votre description</label>
+                <input type="text" name="description" id="description" />
+            </li><li>
+            <label for="utilisateur">Choix de l'utilisateur</label>
+                <input type="number" name="utilisateur" id="utilisateur" />
+            </li><li>
+            <input type="submit" value="OK">
+            </li>
+        </ul>
+    </form>
+
+
+
     </section>
 </body>
 </html>

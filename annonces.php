@@ -49,4 +49,4 @@ Liste des annonces
             </table>
         </span>";
 include("layout.php");
-        ?>
+?>

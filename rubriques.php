@@ -1,23 +1,19 @@
 <?php
 $nav = '
-<li class="active"><a href="annonceurs.php">Annonceurs </a></li>
-<li><a href="rubriques.php">Rubriques</a></li>
+<li><a href="annonceurs.php">Annonceurs </a></li>
+<li class="active"><a href="rubriques.php">Rubriques</a></li>
 <li><a href="annonces.php">Annonces</a></li>
 ' ;
 $header = '
     Les annonceurs
 ' ;
-
-
 try    
 {
     $bdd = new PDO('mysql:host=localhost;dbname=annonces_immo;charset=utf8', 'root', 'admin');;
 }
 catch (Exception $e)
 {
-
         die('Erreur : ' . $e->getMessage());
-
 }
 $annonce = $bdd->query('
 select * from  categories;
@@ -46,4 +42,4 @@ $section ="
 </span>";
 include("layout.php");
 
-        ?>
+?>
