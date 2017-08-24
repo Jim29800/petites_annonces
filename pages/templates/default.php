@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Annonces</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="container">
@@ -16,7 +17,7 @@
     <?php include('/media/www-dev/private/annonce-immo/pages/header.php'); ?>
     </div>
     </header>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default container">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -37,9 +38,12 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
-    <section>
+    <section class="container">
     <?= $section ?>
     </section>
+    <footer  class="container">
+        <?php include('/media/www-dev/private/annonce-immo/pages/footer.php'); ?>
+    </footer>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>

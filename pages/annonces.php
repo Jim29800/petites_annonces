@@ -23,7 +23,7 @@ Liste des annonces
         ');
     $section ="
         <span>
-            <table class='table'>
+            <table class='table' >
                 <thead>
                     <tr>
                         <th>Réference de l'annonce</th>
@@ -31,22 +31,25 @@ Liste des annonces
                         <th>Prix</th>
                         <th>Description</th>
                         <th>Vendeur</th>
+                        <th>Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>";
                 while ($donnees = $annonce->fetch())
             {
-            $section .="
-                <tr>
-                <td>" .  $donnees['id_ads'] . "</td>
+            $section .="<tr>
+                    <td name='tab_annonces'>" .  $donnees['id_ads'] . "</td>
                     <td>" .  $donnees['title'] . "</td>
                     <td>" .  $donnees['price'] . "€</td>
                     <td>" .  $donnees['description'] ."</td>
                     <td class='text-uppercase'>" . $donnees['firstname'] ."</td>
-                </tr>";
+                    <td><a href='./pages/supprimer.php?val=" . $donnees['id_ads'] . "' class='btn btn-default'>X</a></td>
+                    </tr>";
             };
             $section .="
                 </tbody>
             </table>
         </span>";
 ?>
+
+

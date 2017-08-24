@@ -52,6 +52,6 @@ INSERT INTO ads (title, price, description, id_user)VALUES
 ("' . $_POST["titre"] . '",' . (float)$_POST["prix"] . ',"' . $_POST["description"] . '",' . (int)$_POST["utilisateur" ]. ');
 ';
 $bdd->exec($sql);
-header('Location: http://localhost/private/annonce-immo/annonces.php');
+header('Location: http://localhost/private/annonce-immo/index.php?p=annonces');
 exit();
 ?>

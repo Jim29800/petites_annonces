@@ -12,7 +12,7 @@ select * from  users;
 ');
 
 $monform = '
-                <form  action="ajout.php" method="post">
+                <form  action="pages/ajout.php" method="post">
                     <h2>Déposer une nouvelle annonce</h2>
                     <div class="form-group">
                         <label for="titre">Votre titre</label>
